@@ -2,8 +2,18 @@
   <section>
     <h2>My frineds</h2>
     <ul>
-      <friend-contact/>
-      <friend-contact/>
+      <friend-contact
+        name="supakit pavaputanon"
+        phone-number="063 020 0081"
+        email-address="supakit.pnm@gmail.com"
+        is-favorite="1"
+      />
+      <friend-contact
+        name="thipsukol kobprasertsri"
+        phone-number="081 753 2754"
+        email-address="thipsukol@gmail.com"
+        is-favorite="0"
+      />
     </ul>
   </section>
 </template>
@@ -12,7 +22,7 @@
 export default {
   data() {
     return {
-      frineds: [
+      friends: [
         {
           id: "supakit",
           name: "supakit pavaputanon",

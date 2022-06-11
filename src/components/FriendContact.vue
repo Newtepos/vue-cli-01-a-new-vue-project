@@ -1,18 +1,20 @@
 <template>
   <li>
     <header>
-      <h1>{{ friend.name }}</h1>
+      <h1>{{ name }} {{ friendIsFavorite === "1" ? "(Favorite)" : "" }}</h1>
     </header>
+    <button @click="toggleFavorite">Toogle Favorite</button>
     <button @click="toggleDetails">Show Details</button>
     <ul v-if="visibility">
-      <li><strong>Phone:</strong>{{ friend.phone }}</li>
-      <li><strong>Email:</strong>{{ friend.email }}</li>
+      <li><strong>Phone: </strong>{{ phoneNumber }}</li>
+      <li><strong>Email: </strong>{{ emailAddress }}</li>
     </ul>
   </li>
 </template>
 
 <script>
 export default {
+  props: ["name", "phoneNumber", "emailAddress", "isFavorite"],
   data() {
     return {
       visibility: false,
@@ -22,11 +24,20 @@ export default {
         phone: "063 020 0081",
         email: "supakit.pnm@gmail.com",
       },
+      friendIsFavorite: this.isFavorite
     };
   },
   methods: {
     toggleDetails() {
       this.visibility = !this.visibility;
+    },
+    toggleFavorite() {
+      console.log(this.isFavorite);
+      if (this.friendIsFavorite === "1") {
+        this.friendIsFavorite = "0"
+      } else {
+        this.friendIsFavorite = "1"
+      }
     },
   },
 };
