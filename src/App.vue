@@ -3,16 +3,12 @@
     <h2>My frineds</h2>
     <ul>
       <friend-contact
-        name="supakit pavaputanon"
-        phone-number="063 020 0081"
-        email-address="supakit.pnm@gmail.com"
-        is-favorite="1"
-      />
-      <friend-contact
-        name="thipsukol kobprasertsri"
-        phone-number="081 753 2754"
-        email-address="thipsukol@gmail.com"
-        is-favorite="0"
+        v-for="friend in friends"
+        :key="friend.id"
+        :name="friend.name"
+        :phone-number="friend.phone"
+        :email-address="friend.email"
+        :is-favorite="true"
       />
     </ul>
   </section>
