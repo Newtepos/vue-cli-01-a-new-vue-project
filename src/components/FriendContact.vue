@@ -5,6 +5,7 @@
     </header>
     <button @click="toggleFavorite">Toogle Favorite</button>
     <button @click="toggleDetails">Show Details</button>
+    <button @click="this.$emit('delete', id)">Delete</button>
     <ul v-if="visibility">
       <li><strong>Phone: </strong>{{ phoneNumber }}</li>
       <li><strong>Email: </strong>{{ emailAddress }}</li>
